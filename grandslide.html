@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/mystyle.css" />
 
         <title>NuCamp: A Better Way To Camp</title>
     </head>
@@ -31,7 +32,7 @@
                         <h2>a better way to camp</h2>
                     </div>
                     <div class="col-md-4 col-xl-2 mt-4">
-                        <a class="btn btn-info" data-target="#reserveModal" role="button" data-toggle="modal">Reserve Campsite</a>
+                        <a class="btn btn-info" href="#reserveForm" role="button" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>
 
                     </div>
                 </div>
@@ -39,75 +40,7 @@
                 
           
         </header>
-
-<!---------------------------------------Modal for Reserve Campsite - Week 3 Workshop --------------------------------------------->
-
-<div id="reserveModal" class="modal fade" role="dialog">
-    <div class="modal-lg modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="bg-info text-white modal-header">
-                <h3 class="modal-title">Reserve a Campsite</h3>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <form>
-<!---Number of Campers ---->
-                    <div class="form-group row">
-                        <label for="numCampers" class="col-12 col-sm-6 col-form-label">Number of Campers</label>
-                        <div class="col">
-                            <select class="form-control" name="numCampers" id="numCampers">
-                                <option value="select">Select...</option>
-                                <option value="one">1</option>
-                                <option value="two">2</option>
-                                <option value="three">3</option>
-                                <option value="four">4</option>
-                                <option value="five">5</option>
-                                <option value="six">6</option>
-                            </select>
-                        </div>    
-                    </div>
-
-<!-----Date---->
-                    <div class="form-group row">
-                        <label for="date" class="col-12 col-sm-6 col-form-label">Date</label> 
-                        <div class="col">
-                            <input type="text" class="form-control" id="date" name="date" placeholder="mm/dd/yyy" />
-                        </div>
-                    </div>
-
-<!----Campsite Type-->
-                    <div class="form-group row">
-                        <label for="siteType" class="col-sm-6 col-form-label">
-                            Campsite Type
-                        </label>
-                        <div class="col-sm-2 btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-success active">
-                                <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked> Tent
-                            </label>
-                            <label class="btn btn-primary">
-                                <input type="radio" name="siteType" id="siteRV" autocomplete="off"> RV
-                            </label>
-                        </div>
-                    </div>
-
-<!---Cancel and Submit-->
-                    <div class="form-group row">
-                        <div class="col">
-                            <button class="btn btn-secondary" data-dismiss="modal" type="submit">Cancel</button> 
-                            <button class="btn btn-primary" type="submit">Search</button> 
-                        </div>
-                    
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-------------------------------------------End of Modal for Reserve Campsite------------------------------>
-<!---------------------------------------------------------------------------------------------------------->
+      
         <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="30" /></a>
@@ -129,7 +62,6 @@
                 </div>
             </div>
         </nav>
-
 
         <div id="loginModal" class="modal fade" role="dialog">
             <div class="modal-dialog" role="document">
@@ -169,11 +101,12 @@
         </div>
 
 
+
     
         <div class="container">
 
             <div class="row row-content">
-                <div class="col-md-8 mx-auto">
+                <div class="col auto">
                     <div id="homeCarousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
@@ -181,9 +114,10 @@
                             <li data-target="#homeCarousel" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <div class="carousel-item  active">
                                 <img class="d-block w-100" src="img/breadcrumb-trail.jpg" alt="Breadcrumb Trail Campground" />
-                                <div class="carousel-caption">
+                            
+                                <div class="carousel-caption center-cap">
                                     <h3>Breadcrumb Trail Campground</h3>
                                     <p class="d-none d-sm-block">Let Nucamp be your guide to this off-the-beaten-path, hike-in-only campground</p>
                                 </div>
@@ -216,6 +150,8 @@
             </div>
             <div class="row row-content align-items-center">
 
+<!--------------------------------------------------------------------------------------------->
+
                 <div class="col-sm-4 order-sm-last col-md-3">
                     <h2 class="text-sm-right">Discover & Review</h2>
                 </div>
@@ -223,7 +159,10 @@
                     <div class="media">
                         <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />
                             <div class="media-body align-self-center">
-                                <h3>Our Campsites</h3>
+                                <a role="button" data-toggle="modal" data-target="#OurCampsitesModal">
+                                    <h3>Our Campsites &nbsp;<i class="fa fa-info-circle"></i></h3>
+                                </a>
+                                       
                                 <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
                             </div>
                     </div>        
@@ -237,7 +176,9 @@
                     <div class="col">
                         <div class="media">
                             <div class="media-body align-self-center">
-                                <h3>React Lake Campground</h3>
+                                <a role="button" data-toggle="modal" data-target="#OurLakeModal">
+                                    <h3>React Lake Campground &nbsp;<i class="fa fa-info-circle"></i></h3>
+                                </a>
                                 <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
                                 
                             </div>
@@ -254,7 +195,8 @@
                         <div class="media">
                             <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
                                 <div class="media-body align-self-center">
-                                    <h3>Bootstrap Outfitters</h3>
+                                    <a role="button" data-toggle="modal" data-target="#OurBootstrap">
+                                    <h3>Bootstrap Outfitters &nbsp;<i class="fa fa-info-circle"></i></h3></a>
                                     <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
                                 </div>
                         </div>        
@@ -263,7 +205,105 @@
                 </div>
            
         </div>
-     
+
+
+<!---modals for Featured Campsites-->
+
+<div id="OurCampsitesModal" class="modal fade" role="dialog" aria-labelledby="featuredLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="featuredLabel">Featured Campsites</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p>Land with medium trees and beautiful countryside. Hiking to the east, good for off roading, camping, horse back riding, or just plain geting away. Features a BEAUTIFUL night sky!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="OurLakeModal" class="modal fade" role="dialog" aria-labelledby="lakeLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="lakeLabel">React Lake Campground</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p>100 acres raw land with rolling hills. on 2 way HWY. Open with a beautiful sunset view. 10 minutes to convenient stores, restaurants, gas stations. It has a creek run through the property most of the year.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="OurBootstrap" class="modal fade" role="dialog" aria-labelledby="bootstrapLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="bootstrapLabel">Bootstrap Outfitters</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <p>Enjoy camping on the shaded edge of a 1 acre small farm pasture in a safe secure premium neighborhood of horse property, all while being just 1-2 miles away from incredible restaurants, Walmart, Costco, Target, Home Depot, Trader Joe's, and more. We have the best Saturday Farmers Market! We're the ideal site for anyone traveling or passing through. The perfect Pit Stop to relax, recharge, resupply, and refuel!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!------------------------------------------------------------------------------------------------------>
+
+
+
+
+        <div class="row row-content">
+            <div class="col-sm-6 mx-auto">
+                <div class="card">
+                    <h3 class="text-light bg-info p-3">Reserve a Campsite</h3>
+                        <div class="card-body">
+                            <form id="reserveForm">
+                                
+                                <div class="form-group row">
+                                    
+                                    <label for="numCampers" class="col-12 col-sm-6 col-form-label">Number of Campers</label>
+                                    <div class="col">
+                                        <select class="form-control" name="numCampers" id="numCampers">
+                                            <option value="select">Select...</option>
+                                            <option value="one">1</option>
+                                            <option value="two">2</option>
+                                            <option value="three">3</option>
+                                            <option value="four">4</option>
+                                            <option value="five">5</option>
+                                            <option value="six">6</option>
+                                        </select>
+                                    </div>    
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="date" class="col-12 col-sm-6 col-form-label">Date</label> 
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="date" name="date" placeholder="mm/dd/yyy" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <button class="btn btn-primary" type="submit">Search</button> 
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+            </div>
+
+        </div>
         <footer class="site-footer">
             <div class="container">
                 <div class="row">
@@ -295,6 +335,12 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
     </body>
 
